@@ -1,0 +1,1010 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 4
+-n 3 -fastpaths -xml Traffic_light_preroute.twx Traffic_light_map.ncd -o
+Traffic_light_preroute.twr Traffic_light.pcf -ucf map.ucf
+
+Design file:              Traffic_light_map.ncd
+Physical constraint file: Traffic_light.pcf
+Device,package,speed:     xc3s500e,fg320,-4 (PRODUCTION 1.27 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3284 - This timing report was generated using estimated delay 
+   information.  For accurate numbers, please refer to the post Place and Route 
+   timing report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+INFO:Timing:3390 - This architecture does not support a default System Jitter 
+   value, please add SYSTEM_JITTER constraint to the UCF to modify the Clock 
+   Uncertainty calculation.
+INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and 
+   'Phase Error' calculations, these terms will be zero in the Clock 
+   Uncertainty calculation.  Please make appropriate modification to 
+   SYSTEM_JITTER to account for the unsupported Discrete Jitter and Phase 
+   Error.
+
+================================================================================
+Timing constraint: NET "clk_BUFGP/IBUFG" PERIOD = 20 ns HIGH 40%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 8725 paths analyzed, 406 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   6.807ns.
+--------------------------------------------------------------------------------
+
+Paths for end point uut1/uut/seconds_reg_31 (SLICEL.F4), 32 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     13.193ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               uut1/uut/seconds_reg_0 (FF)
+  Destination:          uut1/uut/seconds_reg_31 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.807ns (Levels of Logic = 17)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: uut1/uut/seconds_reg_0 to uut1/uut/seconds_reg_31
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICEL.YQ            Tcko                  0.587   uut1/uut/seconds_reg<1>
+                                                       uut1/uut/seconds_reg_0
+    SLICEL.F1            net (fanout=3)     e  0.100   uut1/uut/seconds_reg<0>
+    SLICEL.COUT          Topcyf                1.162   uut1/uut/seconds_nxt_addsub0000<0>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_lut<0>_INV_0
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<0>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<1>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<1>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<2>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<2>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<3>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<3>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<4>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<4>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<5>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<5>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<6>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<6>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<7>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<7>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<8>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<8>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<9>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<9>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<10>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<10>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<11>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<11>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<12>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<12>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<13>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<13>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<14>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<14>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<15>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<15>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<16>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<16>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<17>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<17>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<18>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<18>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<19>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<19>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<20>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<20>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<21>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<21>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<22>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<22>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<23>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<23>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<24>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<24>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<25>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<25>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<26>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<26>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<27>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<27>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<28>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<28>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<29>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<29>
+    SLICEL.Y             Tciny                 0.869   uut1/uut/seconds_nxt_addsub0000<30>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<30>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_xor<31>
+    SLICEL.F4            net (fanout=1)     e  0.100   uut1/uut/seconds_nxt_addsub0000<31>
+    SLICEL.CLK           Tfck                  0.837   uut1/uut/seconds_reg<31>
+                                                       uut1/uut/Mmux_seconds_nxt501
+                                                       uut1/uut/seconds_reg_31
+    -------------------------------------------------  ---------------------------
+    Total                                      6.807ns (5.107ns logic, 1.700ns route)
+                                                       (75.0% logic, 25.0% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     13.350ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               uut1/uut/seconds_reg_1 (FF)
+  Destination:          uut1/uut/seconds_reg_31 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.650ns (Levels of Logic = 17)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: uut1/uut/seconds_reg_1 to uut1/uut/seconds_reg_31
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICEL.XQ            Tcko                  0.591   uut1/uut/seconds_reg<1>
+                                                       uut1/uut/seconds_reg_1
+    SLICEL.G1            net (fanout=3)     e  0.100   uut1/uut/seconds_reg<1>
+    SLICEL.COUT          Topcyg                1.001   uut1/uut/seconds_nxt_addsub0000<0>
+                                                       uut1/uut/seconds_reg<1>_rt
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<1>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<1>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<2>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<2>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<3>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<3>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<4>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<4>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<5>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<5>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<6>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<6>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<7>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<7>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<8>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<8>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<9>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<9>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<10>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<10>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<11>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<11>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<12>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<12>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<13>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<13>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<14>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<14>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<15>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<15>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<16>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<16>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<17>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<17>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<18>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<18>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<19>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<19>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<20>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<20>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<21>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<21>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<22>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<22>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<23>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<23>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<24>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<24>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<25>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<25>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<26>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<26>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<27>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<27>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<28>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<28>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<29>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<29>
+    SLICEL.Y             Tciny                 0.869   uut1/uut/seconds_nxt_addsub0000<30>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<30>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_xor<31>
+    SLICEL.F4            net (fanout=1)     e  0.100   uut1/uut/seconds_nxt_addsub0000<31>
+    SLICEL.CLK           Tfck                  0.837   uut1/uut/seconds_reg<31>
+                                                       uut1/uut/Mmux_seconds_nxt501
+                                                       uut1/uut/seconds_reg_31
+    -------------------------------------------------  ---------------------------
+    Total                                      6.650ns (4.950ns logic, 1.700ns route)
+                                                       (74.4% logic, 25.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     13.411ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               uut1/uut/seconds_reg_2 (FF)
+  Destination:          uut1/uut/seconds_reg_31 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.589ns (Levels of Logic = 16)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: uut1/uut/seconds_reg_2 to uut1/uut/seconds_reg_31
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICEL.YQ            Tcko                  0.587   uut1/uut/seconds_reg<3>
+                                                       uut1/uut/seconds_reg_2
+    SLICEL.F1            net (fanout=3)     e  0.100   uut1/uut/seconds_reg<2>
+    SLICEL.COUT          Topcyf                1.162   uut1/uut/seconds_nxt_addsub0000<2>
+                                                       uut1/uut/seconds_reg<2>_rt
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<2>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<3>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<3>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<4>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<4>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<5>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<5>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<6>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<6>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<7>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<7>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<8>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<8>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<9>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<9>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<10>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<10>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<11>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<11>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<12>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<12>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<13>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<13>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<14>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<14>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<15>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<15>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<16>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<16>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<17>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<17>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<18>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<18>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<19>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<19>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<20>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<20>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<21>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<21>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<22>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<22>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<23>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<23>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<24>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<24>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<25>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<25>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<26>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<26>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<27>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<27>
+    SLICEL.COUT          Tbyp                  0.118   uut1/uut/seconds_nxt_addsub0000<28>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<28>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<29>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut1/uut/Madd_seconds_nxt_addsub0000_cy<29>
+    SLICEL.Y             Tciny                 0.869   uut1/uut/seconds_nxt_addsub0000<30>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_cy<30>
+                                                       uut1/uut/Madd_seconds_nxt_addsub0000_xor<31>
+    SLICEL.F4            net (fanout=1)     e  0.100   uut1/uut/seconds_nxt_addsub0000<31>
+    SLICEL.CLK           Tfck                  0.837   uut1/uut/seconds_reg<31>
+                                                       uut1/uut/Mmux_seconds_nxt501
+                                                       uut1/uut/seconds_reg_31
+    -------------------------------------------------  ---------------------------
+    Total                                      6.589ns (4.989ns logic, 1.600ns route)
+                                                       (75.7% logic, 24.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point uut/seconds_reg_31 (SLICEL.F4), 32 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     13.193ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               uut/seconds_reg_0 (FF)
+  Destination:          uut/seconds_reg_31 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.807ns (Levels of Logic = 17)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: uut/seconds_reg_0 to uut/seconds_reg_31
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICEL.YQ            Tcko                  0.587   uut/seconds_reg<1>
+                                                       uut/seconds_reg_0
+    SLICEL.F1            net (fanout=3)     e  0.100   uut/seconds_reg<0>
+    SLICEL.COUT          Topcyf                1.162   uut/seconds_nxt_addsub0000<0>
+                                                       uut/Madd_seconds_nxt_addsub0000_lut<0>_INV_0
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<0>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<1>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<1>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<2>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<2>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<3>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<3>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<4>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<4>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<5>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<5>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<6>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<6>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<7>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<7>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<8>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<8>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<9>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<9>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<10>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<10>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<11>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<11>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<12>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<12>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<13>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<13>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<14>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<14>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<15>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<15>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<16>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<16>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<17>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<17>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<18>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<18>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<19>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<19>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<20>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<20>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<21>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<21>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<22>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<22>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<23>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<23>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<24>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<24>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<25>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<25>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<26>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<26>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<27>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<27>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<28>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<28>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<29>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<29>
+    SLICEL.Y             Tciny                 0.869   uut/seconds_nxt_addsub0000<30>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<30>
+                                                       uut/Madd_seconds_nxt_addsub0000_xor<31>
+    SLICEL.F4            net (fanout=1)     e  0.100   uut/seconds_nxt_addsub0000<31>
+    SLICEL.CLK           Tfck                  0.837   uut/seconds_reg<31>
+                                                       uut/Mmux_seconds_nxt501
+                                                       uut/seconds_reg_31
+    -------------------------------------------------  ---------------------------
+    Total                                      6.807ns (5.107ns logic, 1.700ns route)
+                                                       (75.0% logic, 25.0% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     13.350ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               uut/seconds_reg_1 (FF)
+  Destination:          uut/seconds_reg_31 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.650ns (Levels of Logic = 17)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: uut/seconds_reg_1 to uut/seconds_reg_31
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICEL.XQ            Tcko                  0.591   uut/seconds_reg<1>
+                                                       uut/seconds_reg_1
+    SLICEL.G1            net (fanout=3)     e  0.100   uut/seconds_reg<1>
+    SLICEL.COUT          Topcyg                1.001   uut/seconds_nxt_addsub0000<0>
+                                                       uut/seconds_reg<1>_rt
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<1>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<1>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<2>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<2>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<3>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<3>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<4>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<4>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<5>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<5>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<6>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<6>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<7>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<7>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<8>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<8>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<9>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<9>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<10>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<10>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<11>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<11>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<12>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<12>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<13>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<13>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<14>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<14>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<15>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<15>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<16>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<16>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<17>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<17>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<18>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<18>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<19>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<19>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<20>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<20>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<21>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<21>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<22>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<22>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<23>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<23>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<24>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<24>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<25>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<25>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<26>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<26>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<27>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<27>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<28>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<28>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<29>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<29>
+    SLICEL.Y             Tciny                 0.869   uut/seconds_nxt_addsub0000<30>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<30>
+                                                       uut/Madd_seconds_nxt_addsub0000_xor<31>
+    SLICEL.F4            net (fanout=1)     e  0.100   uut/seconds_nxt_addsub0000<31>
+    SLICEL.CLK           Tfck                  0.837   uut/seconds_reg<31>
+                                                       uut/Mmux_seconds_nxt501
+                                                       uut/seconds_reg_31
+    -------------------------------------------------  ---------------------------
+    Total                                      6.650ns (4.950ns logic, 1.700ns route)
+                                                       (74.4% logic, 25.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     13.411ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               uut/seconds_reg_2 (FF)
+  Destination:          uut/seconds_reg_31 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.589ns (Levels of Logic = 16)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: uut/seconds_reg_2 to uut/seconds_reg_31
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICEL.YQ            Tcko                  0.587   uut/seconds_reg<3>
+                                                       uut/seconds_reg_2
+    SLICEL.F1            net (fanout=3)     e  0.100   uut/seconds_reg<2>
+    SLICEL.COUT          Topcyf                1.162   uut/seconds_nxt_addsub0000<2>
+                                                       uut/seconds_reg<2>_rt
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<2>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<3>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<3>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<4>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<4>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<5>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<5>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<6>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<6>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<7>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<7>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<8>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<8>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<9>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<9>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<10>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<10>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<11>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<11>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<12>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<12>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<13>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<13>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<14>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<14>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<15>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<15>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<16>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<16>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<17>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<17>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<18>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<18>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<19>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<19>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<20>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<20>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<21>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<21>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<22>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<22>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<23>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<23>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<24>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<24>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<25>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<25>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<26>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<26>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<27>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<27>
+    SLICEL.COUT          Tbyp                  0.118   uut/seconds_nxt_addsub0000<28>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<28>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<29>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_seconds_nxt_addsub0000_cy<29>
+    SLICEL.Y             Tciny                 0.869   uut/seconds_nxt_addsub0000<30>
+                                                       uut/Madd_seconds_nxt_addsub0000_cy<30>
+                                                       uut/Madd_seconds_nxt_addsub0000_xor<31>
+    SLICEL.F4            net (fanout=1)     e  0.100   uut/seconds_nxt_addsub0000<31>
+    SLICEL.CLK           Tfck                  0.837   uut/seconds_reg<31>
+                                                       uut/Mmux_seconds_nxt501
+                                                       uut/seconds_reg_31
+    -------------------------------------------------  ---------------------------
+    Total                                      6.589ns (4.989ns logic, 1.600ns route)
+                                                       (75.7% logic, 24.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point uut/ms_reg_31 (SLICEL.F2), 32 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     13.193ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               uut/ms_reg_0 (FF)
+  Destination:          uut/ms_reg_31 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.807ns (Levels of Logic = 17)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: uut/ms_reg_0 to uut/ms_reg_31
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICEL.YQ            Tcko                  0.587   uut/ms_reg<1>
+                                                       uut/ms_reg_0
+    SLICEL.F1            net (fanout=2)     e  0.100   uut/ms_reg<0>
+    SLICEL.COUT          Topcyf                1.162   uut/ms_nxt_addsub0000<0>
+                                                       uut/Madd_ms_nxt_addsub0000_lut<0>_INV_0
+                                                       uut/Madd_ms_nxt_addsub0000_cy<0>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<1>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<1>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<2>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<2>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<3>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<3>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<4>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<4>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<5>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<5>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<6>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<6>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<7>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<7>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<8>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<8>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<9>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<9>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<10>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<10>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<11>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<11>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<12>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<12>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<13>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<13>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<14>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<14>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<15>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<15>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<16>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<16>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<17>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<17>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<18>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<18>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<19>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<19>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<20>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<20>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<21>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<21>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<22>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<22>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<23>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<23>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<24>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<24>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<25>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<25>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<26>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<26>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<27>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<27>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<28>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<28>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<29>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<29>
+    SLICEL.Y             Tciny                 0.869   uut/ms_nxt_addsub0000<30>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<30>
+                                                       uut/Madd_ms_nxt_addsub0000_xor<31>
+    SLICEL.F2            net (fanout=1)     e  0.100   uut/ms_nxt_addsub0000<31>
+    SLICEL.CLK           Tfck                  0.837   uut/ms_reg<31>
+                                                       uut/ms_nxt<31>1
+                                                       uut/ms_reg_31
+    -------------------------------------------------  ---------------------------
+    Total                                      6.807ns (5.107ns logic, 1.700ns route)
+                                                       (75.0% logic, 25.0% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     13.350ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               uut/ms_reg_1 (FF)
+  Destination:          uut/ms_reg_31 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.650ns (Levels of Logic = 17)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: uut/ms_reg_1 to uut/ms_reg_31
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICEL.XQ            Tcko                  0.591   uut/ms_reg<1>
+                                                       uut/ms_reg_1
+    SLICEL.G1            net (fanout=2)     e  0.100   uut/ms_reg<1>
+    SLICEL.COUT          Topcyg                1.001   uut/ms_nxt_addsub0000<0>
+                                                       uut/ms_reg<1>_rt
+                                                       uut/Madd_ms_nxt_addsub0000_cy<1>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<1>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<2>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<2>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<3>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<3>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<4>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<4>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<5>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<5>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<6>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<6>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<7>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<7>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<8>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<8>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<9>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<9>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<10>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<10>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<11>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<11>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<12>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<12>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<13>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<13>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<14>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<14>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<15>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<15>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<16>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<16>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<17>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<17>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<18>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<18>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<19>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<19>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<20>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<20>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<21>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<21>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<22>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<22>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<23>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<23>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<24>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<24>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<25>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<25>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<26>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<26>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<27>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<27>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<28>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<28>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<29>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<29>
+    SLICEL.Y             Tciny                 0.869   uut/ms_nxt_addsub0000<30>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<30>
+                                                       uut/Madd_ms_nxt_addsub0000_xor<31>
+    SLICEL.F2            net (fanout=1)     e  0.100   uut/ms_nxt_addsub0000<31>
+    SLICEL.CLK           Tfck                  0.837   uut/ms_reg<31>
+                                                       uut/ms_nxt<31>1
+                                                       uut/ms_reg_31
+    -------------------------------------------------  ---------------------------
+    Total                                      6.650ns (4.950ns logic, 1.700ns route)
+                                                       (74.4% logic, 25.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     13.411ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               uut/ms_reg_2 (FF)
+  Destination:          uut/ms_reg_31 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.589ns (Levels of Logic = 16)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: uut/ms_reg_2 to uut/ms_reg_31
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICEL.YQ            Tcko                  0.587   uut/ms_reg<3>
+                                                       uut/ms_reg_2
+    SLICEL.F1            net (fanout=2)     e  0.100   uut/ms_reg<2>
+    SLICEL.COUT          Topcyf                1.162   uut/ms_nxt_addsub0000<2>
+                                                       uut/ms_reg<2>_rt
+                                                       uut/Madd_ms_nxt_addsub0000_cy<2>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<3>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<3>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<4>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<4>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<5>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<5>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<6>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<6>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<7>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<7>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<8>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<8>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<9>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<9>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<10>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<10>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<11>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<11>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<12>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<12>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<13>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<13>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<14>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<14>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<15>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<15>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<16>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<16>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<17>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<17>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<18>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<18>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<19>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<19>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<20>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<20>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<21>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<21>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<22>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<22>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<23>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<23>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<24>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<24>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<25>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<25>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<26>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<26>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<27>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<27>
+    SLICEL.COUT          Tbyp                  0.118   uut/ms_nxt_addsub0000<28>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<28>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<29>
+    SLICEL.CIN           net (fanout=1)     e  0.100   uut/Madd_ms_nxt_addsub0000_cy<29>
+    SLICEL.Y             Tciny                 0.869   uut/ms_nxt_addsub0000<30>
+                                                       uut/Madd_ms_nxt_addsub0000_cy<30>
+                                                       uut/Madd_ms_nxt_addsub0000_xor<31>
+    SLICEL.F2            net (fanout=1)     e  0.100   uut/ms_nxt_addsub0000<31>
+    SLICEL.CLK           Tfck                  0.837   uut/ms_reg<31>
+                                                       uut/ms_nxt<31>1
+                                                       uut/ms_reg_31
+    -------------------------------------------------  ---------------------------
+    Total                                      6.589ns (4.989ns logic, 1.600ns route)
+                                                       (75.7% logic, 24.3% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: NET "clk_BUFGP/IBUFG" PERIOD = 20 ns HIGH 40%;
+--------------------------------------------------------------------------------
+
+Paths for end point uut1/state_reg_FSM_FFd2 (SLICEL.F2), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      1.086ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               uut1/state_reg_FSM_FFd1 (FF)
+  Destination:          uut1/state_reg_FSM_FFd2 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      1.086ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 20.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: uut1/state_reg_FSM_FFd1 to uut1/state_reg_FSM_FFd2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICEL.YQ            Tcko                  0.470   uut1/state_reg_FSM_FFd2
+                                                       uut1/state_reg_FSM_FFd1
+    SLICEL.F2            net (fanout=3)     e  0.100   uut1/state_reg_FSM_FFd1
+    SLICEL.CLK           Tckf        (-Th)    -0.516   uut1/state_reg_FSM_FFd2
+                                                       uut1/state_reg_FSM_FFd2-In1
+                                                       uut1/state_reg_FSM_FFd2
+    -------------------------------------------------  ---------------------------
+    Total                                      1.086ns (0.986ns logic, 0.100ns route)
+                                                       (90.8% logic, 9.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point uut1/state_reg_FSM_FFd1 (SLICEL.G2), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      1.086ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               uut1/state_reg_FSM_FFd1 (FF)
+  Destination:          uut1/state_reg_FSM_FFd1 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      1.086ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 20.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: uut1/state_reg_FSM_FFd1 to uut1/state_reg_FSM_FFd1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICEL.YQ            Tcko                  0.470   uut1/state_reg_FSM_FFd2
+                                                       uut1/state_reg_FSM_FFd1
+    SLICEL.G2            net (fanout=3)     e  0.100   uut1/state_reg_FSM_FFd1
+    SLICEL.CLK           Tckg        (-Th)    -0.516   uut1/state_reg_FSM_FFd2
+                                                       uut1/state_reg_FSM_FFd1-In1
+                                                       uut1/state_reg_FSM_FFd1
+    -------------------------------------------------  ---------------------------
+    Total                                      1.086ns (0.986ns logic, 0.100ns route)
+                                                       (90.8% logic, 9.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point state_reg_FSM_FFd3 (SLICEL.G3), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      1.086ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               state_reg_FSM_FFd3 (FF)
+  Destination:          state_reg_FSM_FFd3 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      1.086ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 20.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: state_reg_FSM_FFd3 to state_reg_FSM_FFd3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICEL.YQ            Tcko                  0.470   state_reg_FSM_FFd3
+                                                       state_reg_FSM_FFd3
+    SLICEL.G3            net (fanout=9)     e  0.100   state_reg_FSM_FFd3
+    SLICEL.CLK           Tckg        (-Th)    -0.516   state_reg_FSM_FFd3
+                                                       state_reg_FSM_FFd3-In1
+                                                       state_reg_FSM_FFd3
+    -------------------------------------------------  ---------------------------
+    Total                                      1.086ns (0.986ns logic, 0.100ns route)
+                                                       (90.8% logic, 9.2% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: NET "clk_BUFGP/IBUFG" PERIOD = 20 ns HIGH 40%;
+--------------------------------------------------------------------------------
+Slack: 18.005ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 8.000ns
+  High pulse limit: 0.798ns (Tch)
+  Physical resource: uut1/state_reg_FSM_FFd2/CLK
+  Logical resource: uut1/state_reg_FSM_FFd2/CK
+  Location pin: SLICEL.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 18.005ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 8.000ns
+  High pulse limit: 0.798ns (Tch)
+  Physical resource: uut1/state_reg_FSM_FFd2/CLK
+  Logical resource: uut1/state_reg_FSM_FFd1/CK
+  Location pin: SLICEL.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 18.005ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 8.000ns
+  High pulse limit: 0.798ns (Tch)
+  Physical resource: state_reg_FSM_FFd3/CLK
+  Logical resource: state_reg_FSM_FFd3/CK
+  Location pin: SLICEL.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    6.807|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 8725 paths, 0 nets, and 815 connections
+
+Design statistics:
+   Minimum period:   6.807ns{1}   (Maximum frequency: 146.908MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Fri May 17 14:21:44 2024 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 4510 MB
+
+
+
