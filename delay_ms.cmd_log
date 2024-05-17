@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "D:/3rd/VLSI/Traffic_light_controller/delay_ms.xst" -ofn "D:/3rd/VLSI/Traffic_light_controller/delay_ms.syr" 

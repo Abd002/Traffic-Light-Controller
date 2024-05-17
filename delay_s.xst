@@ -1,0 +1,5 @@
+set -tmpdir "D:/3rd/VLSI/Traffic_light_controller/xst/projnav.tmp"
+set -xsthdpdir "D:/3rd/VLSI/Traffic_light_controller/xst"
+elaborate
+-ifn delay_s.prj
+-ifmt mixed
