@@ -1,0 +1,3 @@
+verilog work "delay_s.v"
+verilog work "debounce.v"
+verilog work "Traffic_light.v"

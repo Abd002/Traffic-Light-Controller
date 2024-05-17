@@ -1,0 +1,542 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
+ 
+--> Reading design: Traffic_light.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Traffic_light.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Traffic_light"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : Traffic_light
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "delay_s.v" in library work
+Compiling verilog file "debounce.v" in library work
+Module <delay_s> compiled
+Compiling verilog file "Traffic_light.v" in library work
+Module <debounce> compiled
+Module <Traffic_light> compiled
+No errors in compilation
+Analysis of file <"Traffic_light.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <Traffic_light> in library <work>.
+
+Analyzing hierarchy for module <delay_s> in library <work> with parameters.
+	frequency = "00000010111110101111000010000000"
+	one_ms_value = "00000000000000001100001101010000"
+
+Analyzing hierarchy for module <debounce> in library <work>.
+
+Analyzing hierarchy for module <delay_s> in library <work> with parameters.
+	frequency = "00000010111110101111000010000000"
+	one_ms_value = "00000000000000001100001101010000"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <Traffic_light>.
+Module <Traffic_light> is correct for synthesis.
+ 
+Analyzing module <delay_s> in library <work>.
+	frequency = 32'b00000010111110101111000010000000
+	one_ms_value = 32'b00000000000000001100001101010000
+Module <delay_s> is correct for synthesis.
+ 
+Analyzing module <debounce> in library <work>.
+Module <debounce> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <delay_s>.
+    Related source file is "delay_s.v".
+    Found 32-bit comparator equal for signal <timeout>.
+    Found 32-bit adder for signal <ms_nxt$addsub0000> created at line 55.
+    Found 32-bit register for signal <ms_reg>.
+    Found 32-bit 4-to-1 multiplexer for signal <seconds_nxt>.
+    Found 32-bit adder for signal <seconds_nxt$addsub0000> created at line 57.
+    Found 32-bit register for signal <seconds_reg>.
+    Summary:
+	inferred  64 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+	inferred  32 Multiplexer(s).
+Unit <delay_s> synthesized.
+
+
+Synthesizing Unit <debounce>.
+    Related source file is "debounce.v".
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <state_reg> of Case statement line 46 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+   	- add an 'INIT' attribute on signal <state_reg> (optimization is then done without any risk)
+   	- use the attribute 'signal_encoding user' to avoid onehot optimization
+   	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
+    Found finite state machine <FSM_0> for signal <state_reg>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 12                                             |
+    | Inputs             | 2                                              |
+    | Outputs            | 36                                             |
+    | Clock              | clk                       (rising_edge)        |
+    | Clock enable       | timeout                   (positive)           |
+    | Reset              | reset                     (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+WARNING:Xst:737 - Found 1-bit latch for signal <button>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+    Summary:
+	inferred   1 Finite State Machine(s).
+Unit <debounce> synthesized.
+
+
+Synthesizing Unit <Traffic_light>.
+    Related source file is "Traffic_light.v".
+    Found finite state machine <FSM_1> for signal <state_reg>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 9                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 5                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Clock enable       | state_reg$or0000          (positive)           |
+    | Reset              | reset                     (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 000                                            |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+WARNING:Xst:737 - Found 1-bit latch for signal <Red>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <Yellow>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <Green>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 32-bit latch for signal <delay>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+    Summary:
+	inferred   1 Finite State Machine(s).
+Unit <Traffic_light> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 4
+ 32-bit adder                                          : 4
+# Registers                                            : 4
+ 32-bit register                                       : 4
+# Latches                                              : 5
+ 1-bit latch                                           : 4
+ 32-bit latch                                          : 1
+# Comparators                                          : 2
+ 32-bit comparator equal                               : 2
+# Multiplexers                                         : 2
+ 32-bit 4-to-1 multiplexer                             : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <state_reg/FSM> on signal <state_reg[1:5]> with one-hot encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 00001
+ 001   | 00010
+ 010   | 00100
+ 011   | 01000
+ 100   | 10000
+-------------------
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <uut1/state_reg/FSM> on signal <state_reg[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 10
+ 11    | 11
+-------------------
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <31>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <30>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <29>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <28>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <27>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <26>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <25>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <24>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <23>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <22>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <21>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <20>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <19>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <18>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <17>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <16>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <15>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <6>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <0>. This FF/Latch will be trimmed during the optimization process.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 2
+# Adders/Subtractors                                   : 4
+ 32-bit adder                                          : 4
+# Registers                                            : 128
+ Flip-Flops                                            : 128
+# Latches                                              : 5
+ 1-bit latch                                           : 4
+ 32-bit latch                                          : 1
+# Comparators                                          : 2
+ 32-bit comparator equal                               : 2
+# Multiplexers                                         : 2
+ 32-bit 4-to-1 multiplexer                             : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <14> in Unit <LPM_LATCH_2> is equivalent to the following 3 FFs/Latches, which will be removed : <10> <8> <5> 
+INFO:Xst:2261 - The FF/Latch <31> in Unit <LPM_LATCH_2> is equivalent to the following 20 FFs/Latches, which will be removed : <30> <29> <28> <27> <26> <25> <24> <23> <22> <21> <20> <19> <18> <17> <16> <15> <6> <2> <1> <0> 
+INFO:Xst:2261 - The FF/Latch <11> in Unit <LPM_LATCH_2> is equivalent to the following 3 FFs/Latches, which will be removed : <9> <7> <3> 
+WARNING:Xst:1710 - FF/Latch <31> (without init value) has a constant value of 0 in block <LPM_LATCH_2>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <Yellow> in Unit <Traffic_light> is equivalent to the following FF/Latch, which will be removed : <delay_11> 
+INFO:Xst:2261 - The FF/Latch <delay_4> in Unit <Traffic_light> is equivalent to the following 2 FFs/Latches, which will be removed : <delay_12> <delay_13> 
+INFO:Xst:2261 - The FF/Latch <Red> in Unit <Traffic_light> is equivalent to the following FF/Latch, which will be removed : <delay_14> 
+
+Optimizing unit <Traffic_light> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Traffic_light, actual ratio is 3.
+Latch Red has been replicated 1 time(s) to handle iob=true attribute.
+Latch Yellow has been replicated 1 time(s) to handle iob=true attribute.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 135
+ Flip-Flops                                            : 135
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : Traffic_light.ngr
+Top Level Output File Name         : Traffic_light
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 6
+
+Cell Usage :
+# BELS                             : 616
+#      GND                         : 1
+#      INV                         : 5
+#      LUT1                        : 124
+#      LUT2                        : 27
+#      LUT3                        : 67
+#      LUT3_D                      : 1
+#      LUT4                        : 92
+#      MUXCY                       : 170
+#      VCC                         : 1
+#      XORCY                       : 128
+# FlipFlops/Latches                : 142
+#      FDC                         : 128
+#      FDCE                        : 6
+#      FDPE                        : 1
+#      LD                          : 7
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 5
+#      IBUF                        : 2
+#      OBUF                        : 3
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                      168  out of   4656     3%  
+ Number of Slice Flip Flops:            139  out of   9312     1%  
+ Number of 4 input LUTs:                316  out of   9312     3%  
+ Number of IOs:                           6
+ Number of bonded IOBs:                   6  out of    232     2%  
+    IOB Flip Flops:                       3
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+Red_or0000(Red_or00001:O)          | NONE(*)(Green)         | 6     |
+clk                                | BUFGP                  | 135   |
+uut1/state_reg_FSM_FFd2            | NONE(uut1/button)      | 1     |
+-----------------------------------+------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+reset                              | IBUF                   | 135   |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 7.250ns (Maximum Frequency: 137.925MHz)
+   Minimum input arrival time before clock: 2.852ns
+   Maximum output required time after clock: 4.368ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 7.250ns (frequency: 137.925MHz)
+  Total number of paths / destination ports: 10808 / 142
+-------------------------------------------------------------------------
+Delay:               7.250ns (Levels of Logic = 17)
+  Source:            uut/seconds_reg_0 (FF)
+  Destination:       uut/seconds_reg_31 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: uut/seconds_reg_0 to uut/seconds_reg_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              3   0.591   0.706  uut/seconds_reg_0 (uut/seconds_reg_0)
+     LUT2:I0->O            1   0.704   0.000  uut/Mcompar_timeout_lut<0>1 (uut/Mcompar_timeout_lut<0>)
+     MUXCY:S->O            1   0.464   0.000  uut/Mcompar_timeout_cy<0> (uut/Mcompar_timeout_cy<0>)
+     MUXCY:CI->O           1   0.059   0.000  uut/Mcompar_timeout_cy<1> (uut/Mcompar_timeout_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  uut/Mcompar_timeout_cy<2> (uut/Mcompar_timeout_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  uut/Mcompar_timeout_cy<3> (uut/Mcompar_timeout_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  uut/Mcompar_timeout_cy<4> (uut/Mcompar_timeout_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  uut/Mcompar_timeout_cy<5> (uut/Mcompar_timeout_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  uut/Mcompar_timeout_cy<6> (uut/Mcompar_timeout_cy<6>)
+     MUXCY:CI->O           1   0.059   0.000  uut/Mcompar_timeout_cy<7> (uut/Mcompar_timeout_cy<7>)
+     MUXCY:CI->O           1   0.059   0.000  uut/Mcompar_timeout_cy<8> (uut/Mcompar_timeout_cy<8>)
+     MUXCY:CI->O           1   0.059   0.000  uut/Mcompar_timeout_cy<9> (uut/Mcompar_timeout_cy<9>)
+     MUXCY:CI->O           1   0.059   0.000  uut/Mcompar_timeout_cy<10> (uut/Mcompar_timeout_cy<10>)
+     MUXCY:CI->O           1   0.059   0.000  uut/Mcompar_timeout_cy<11> (uut/Mcompar_timeout_cy<11>)
+     MUXCY:CI->O           1   0.059   0.000  uut/Mcompar_timeout_cy<12> (uut/Mcompar_timeout_cy<12>)
+     MUXCY:CI->O           1   0.459   0.455  uut/Mcompar_timeout_cy<13> (uut/Mcompar_timeout_cy<13>)
+     LUT3_D:I2->O         64   0.704   1.447  uut/Mcompar_timeout_cy<15>1 (timeout)
+     LUT4:I0->O            1   0.704   0.000  uut/Mmux_seconds_nxt261 (uut/seconds_nxt<20>)
+     FDC:D                     0.308          uut/seconds_reg_20
+    ----------------------------------------
+    Total                      7.250ns (4.642ns logic, 2.608ns route)
+                                       (64.0% logic, 36.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              2.852ns (Levels of Logic = 2)
+  Source:            button_bressed (PAD)
+  Destination:       uut1/state_reg_FSM_FFd1 (FF)
+  Destination Clock: clk rising
+
+  Data Path: button_bressed to uut1/state_reg_FSM_FFd1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   1.218   0.622  button_bressed_IBUF (button_bressed_IBUF)
+     LUT4:I0->O            1   0.704   0.000  uut1/state_reg_FSM_FFd1-In1 (uut1/state_reg_FSM_FFd1-In)
+     FDCE:D                    0.308          uut1/state_reg_FSM_FFd1
+    ----------------------------------------
+    Total                      2.852ns (2.230ns logic, 0.622ns route)
+                                       (78.2% logic, 21.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'Red_or0000'
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Offset:              4.368ns (Levels of Logic = 1)
+  Source:            Red_1 (LATCH)
+  Destination:       red_led (PAD)
+  Source Clock:      Red_or0000 falling
+
+  Data Path: Red_1 to red_led
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.676   0.420  Red_1 (Red_1)
+     OBUF:I->O                 3.272          red_led_OBUF (red_led)
+    ----------------------------------------
+    Total                      4.368ns (3.948ns logic, 0.420ns route)
+                                       (90.4% logic, 9.6% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 5.12 secs
+ 
+--> 
+
+Total memory usage is 4514196 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   27 (   0 filtered)
+Number of infos    :   13 (   0 filtered)
+

@@ -1,0 +1,57 @@
+xst -intstyle ise -ifn "D:/3rd/VLSI/Traffic_light_controller/Traffic_light.xst" -ofn "D:/3rd/VLSI/Traffic_light_controller/Traffic_light.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc map.ucf -p xc3s500e-fg320-4 Traffic_light.ngc Traffic_light.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Traffic_light_map.ncd Traffic_light.ngd Traffic_light.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc map.ucf -p xc3s500e-fg320-4 Traffic_light.ngc Traffic_light.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Traffic_light_map.ncd Traffic_light.ngd Traffic_light.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc map.ucf -p xc3s500e-fg320-4 Traffic_light.ngc Traffic_light.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Traffic_light_map.ncd Traffic_light.ngd Traffic_light.pcf 
+xst -intstyle ise -ifn "D:/3rd/VLSI/Traffic_light_controller/Traffic_light.xst" -ofn "D:/3rd/VLSI/Traffic_light_controller/Traffic_light.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc map.ucf -p xc3s500e-fg320-4 Traffic_light.ngc Traffic_light.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Traffic_light_map.ncd Traffic_light.ngd Traffic_light.pcf 
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Traffic_light_map.ncd Traffic_light.ngd Traffic_light.pcf 
+par -w -intstyle ise -ol high -t 1 Traffic_light_map.ncd Traffic_light.ncd Traffic_light.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Traffic_light.twx Traffic_light.ncd -o Traffic_light.twr Traffic_light.pcf -ucf map.ucf 
+bitgen -intstyle ise -f Traffic_light.ut Traffic_light.ncd 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Traffic_light_preroute.twx Traffic_light_map.ncd -o Traffic_light_preroute.twr Traffic_light.pcf -ucf map.ucf 
+bitgen -intstyle ise -f Traffic_light.ut Traffic_light.ncd 
+xst -intstyle ise -ifn "D:/3rd/VLSI/Traffic_light_controller/Traffic_light.xst" -ofn "D:/3rd/VLSI/Traffic_light_controller/Traffic_light.syr" 
+xst -intstyle ise -ifn "D:/3rd/VLSI/Traffic_light_controller/Traffic_light.xst" -ofn "D:/3rd/VLSI/Traffic_light_controller/Traffic_light.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc map.ucf -p xc3s500e-fg320-4 Traffic_light.ngc Traffic_light.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Traffic_light_map.ncd Traffic_light.ngd Traffic_light.pcf 
+par -w -intstyle ise -ol high -t 1 Traffic_light_map.ncd Traffic_light.ncd Traffic_light.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Traffic_light.twx Traffic_light.ncd -o Traffic_light.twr Traffic_light.pcf -ucf map.ucf 
+bitgen -intstyle ise -f Traffic_light.ut Traffic_light.ncd 
+xst -intstyle ise -ifn "D:/3rd/VLSI/Traffic_light_controller/Traffic_light.xst" -ofn "D:/3rd/VLSI/Traffic_light_controller/Traffic_light.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc map.ucf -p xc3s500e-fg320-4 Traffic_light.ngc Traffic_light.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Traffic_light_map.ncd Traffic_light.ngd Traffic_light.pcf 
+par -w -intstyle ise -ol high -t 1 Traffic_light_map.ncd Traffic_light.ncd Traffic_light.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Traffic_light.twx Traffic_light.ncd -o Traffic_light.twr Traffic_light.pcf -ucf map.ucf 
+bitgen -intstyle ise -f Traffic_light.ut Traffic_light.ncd 
+xst -intstyle ise -ifn "D:/3rd/VLSI/Traffic_light_controller/Traffic_light.xst" -ofn "D:/3rd/VLSI/Traffic_light_controller/Traffic_light.syr" 
+xst -intstyle ise -ifn "D:/3rd/VLSI/Traffic_light_controller/Traffic_light.xst" -ofn "D:/3rd/VLSI/Traffic_light_controller/Traffic_light.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc map.ucf -p xc3s500e-fg320-4 Traffic_light.ngc Traffic_light.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Traffic_light_map.ncd Traffic_light.ngd Traffic_light.pcf 
+par -w -intstyle ise -ol high -t 1 Traffic_light_map.ncd Traffic_light.ncd Traffic_light.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Traffic_light.twx Traffic_light.ncd -o Traffic_light.twr Traffic_light.pcf -ucf map.ucf 
+bitgen -intstyle ise -f Traffic_light.ut Traffic_light.ncd 
+xst -intstyle ise -ifn "D:/3rd/VLSI/Traffic_light_controller/Traffic_light.xst" -ofn "D:/3rd/VLSI/Traffic_light_controller/Traffic_light.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc map.ucf -p xc3s500e-fg320-4 Traffic_light.ngc Traffic_light.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Traffic_light_map.ncd Traffic_light.ngd Traffic_light.pcf 
+par -w -intstyle ise -ol high -t 1 Traffic_light_map.ncd Traffic_light.ncd Traffic_light.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Traffic_light.twx Traffic_light.ncd -o Traffic_light.twr Traffic_light.pcf -ucf map.ucf 
+bitgen -intstyle ise -f Traffic_light.ut Traffic_light.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc map.ucf -p xc3s500e-fg320-4 Traffic_light.ngc Traffic_light.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Traffic_light_map.ncd Traffic_light.ngd Traffic_light.pcf 
+par -w -intstyle ise -ol high -t 1 Traffic_light_map.ncd Traffic_light.ncd Traffic_light.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Traffic_light.twx Traffic_light.ncd -o Traffic_light.twr Traffic_light.pcf -ucf map.ucf 
+bitgen -intstyle ise -f Traffic_light.ut Traffic_light.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc map.ucf -p xc3s500e-fg320-4 Traffic_light.ngc Traffic_light.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Traffic_light_map.ncd Traffic_light.ngd Traffic_light.pcf 
+par -w -intstyle ise -ol high -t 1 Traffic_light_map.ncd Traffic_light.ncd Traffic_light.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Traffic_light.twx Traffic_light.ncd -o Traffic_light.twr Traffic_light.pcf -ucf map.ucf 
+bitgen -intstyle ise -f Traffic_light.ut Traffic_light.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc map.ucf -p xc3s500e-fg320-4 Traffic_light.ngc Traffic_light.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Traffic_light_map.ncd Traffic_light.ngd Traffic_light.pcf 
+par -w -intstyle ise -ol high -t 1 Traffic_light_map.ncd Traffic_light.ncd Traffic_light.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Traffic_light.twx Traffic_light.ncd -o Traffic_light.twr Traffic_light.pcf -ucf map.ucf 
+bitgen -intstyle ise -f Traffic_light.ut Traffic_light.ncd 

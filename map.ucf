@@ -1,0 +1,13 @@
+# ==== Pushbuttons (BTN) ====
+NET "button_bressed" LOC = "H13" | IOSTANDARD = LVTTL | PULLDOWN ;
+NET "reset" LOC = "V4"  | IOSTANDARD = LVTTL    | PULLDOWN ;
+
+
+# Define clock period for 50 MHz oscillator (40%/60% duty-cycle)
+NET "clk" PERIOD = 20.0ns HIGH 40%;
+NET "clk" LOC = "C9" | IOSTANDARD = LVCMOS33 ; 
+# ==== Discrete LEDs (LED) ====
+# These are shared connections with the FX2 connector
+NET "green_led" LOC = "F12" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ;
+NET "yellow_led" LOC = "E12" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ;
+NET "red_led" LOC = "E11" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ;
